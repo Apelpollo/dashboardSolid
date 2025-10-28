@@ -46,4 +46,3 @@ npm start
 ## 📝 Licencia
 
 MIT
-
