@@ -71,5 +71,6 @@ class ApiConnection {
 }
 
 // Exportamos una instancia única
-export default new ApiConnection();
+const apiConnection = new ApiConnection();
+export default apiConnection;
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { useTheme } from "../context/ThemeContext";
-import { gsap } from "gsap";
 
 /**
  * Fondo animado de partículas conectadas

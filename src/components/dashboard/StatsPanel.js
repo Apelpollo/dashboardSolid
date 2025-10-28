@@ -10,7 +10,6 @@
 import React from 'react';
 import { useDashboard } from '../../context/DashboardContext';
 import StatCard from './StatCard';
-import ChartCard from './ChartCard';
 import ScrollReveal from './ScrollReveal';
 import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 

@@ -83,5 +83,6 @@ class RestApiService {
   }
 }
 
-export default new RestApiService();
+const restApiService = new RestApiService();
+export default restApiService;
 

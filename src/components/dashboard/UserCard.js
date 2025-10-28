@@ -5,13 +5,8 @@
  * - Single Responsibility: Se encarga solo de mostrar información de un usuario
  */
 
-import React, { useState, useLayoutEffect, useRef, useEffect } from 'react';
+import React, { useState, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const UserCard = ({ user, index = 0 }) => {
   const [imgError, setImgError] = useState(false);
@@ -19,10 +14,11 @@ const UserCard = ({ user, index = 0 }) => {
 
   // Animación de entrada en secuencia
   useLayoutEffect(() => {
-    if (!cardRef.current) return;
+    const card = cardRef.current;
+    if (!card) return;
 
     // Set initial state
-    gsap.set(cardRef.current, {
+    gsap.set(card, {
       opacity: 0,
       y: 50,
       scale: 0.8,
@@ -32,7 +28,7 @@ const UserCard = ({ user, index = 0 }) => {
     // Animate on mount with delay based on index
     const delay = index * 0.1;
     
-    gsap.to(cardRef.current, {
+    gsap.to(card, {
       opacity: 1,
       y: 0,
       scale: 1,
@@ -43,7 +39,7 @@ const UserCard = ({ user, index = 0 }) => {
     });
 
     return () => {
-      gsap.killTweensOf(cardRef.current);
+      gsap.killTweensOf(card);
     };
   }, [index]);
 

@@ -123,5 +123,6 @@ class GraphQLApiService {
   }
 }
 
-export default new GraphQLApiService();
+const graphQLApiService = new GraphQLApiService();
+export default graphQLApiService;
 
